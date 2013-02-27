@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Notruf AUT</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="wo">Wo ist es Passiert ?</string>
+    <string name="was">Was ist passiert ?</string>
+    <string name="wieviel">Wieviele Verletzte / Betroffene ?</string>
+    <string name="situation">Welche Situation finden Sie vor ?</string>
+    <string name="warten">Warten auf Rückfragen !</string>
+
+</resources>
