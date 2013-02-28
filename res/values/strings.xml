@@ -2,12 +2,13 @@
 <resources>
 
     <string name="app_name">Notruf AUT</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Info</string>
     <string name="hello_world">Hello world!</string>
     <string name="wo">Wo ist es Passiert ?</string>
     <string name="was">Was ist passiert ?</string>
     <string name="wieviel">Wieviele Verletzte / Betroffene ?</string>
     <string name="situation">Welche Situation finden Sie vor ?</string>
     <string name="warten">Warten auf Rückfragen !</string>
+    <string name="info">info</string>
 
 </resources>

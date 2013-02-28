@@ -52,12 +52,4 @@
         android:text="@string/warten"
         android:textColor="@color/bar_red" />
 
-    <ImageButton
-        android:id="@+id/imageButton1"
-        android:layout_width="218dp"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/hello_world"
-        android:src="@drawable/ic_notruf"
-        android:tag="@string/hello_world" />
-
 </LinearLayout>
