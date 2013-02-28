@@ -20,4 +20,7 @@
     <style name="styleName">
         <item name="android:layout_marginBottom">124dp</item>
     </style>
+    <style name="padding_16dp">
+        <item name="android:padding">16dp</item>
+    </style>
 </resources>
