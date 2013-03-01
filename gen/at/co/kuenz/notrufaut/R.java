@@ -34,7 +34,7 @@ public final class R {
     }
     public static final class id {
         public static final int LinearLayout1=0x7f090001;
-        public static final int info_click=0x7f090006;
+        public static final int action_settings=0x7f090006;
         public static final int textView1=0x7f090000;
         public static final int textView2=0x7f090002;
         public static final int textView3=0x7f090003;
@@ -53,7 +53,6 @@ public final class R {
         public static final int app_name=0x7f060000;
         public static final int hello_world=0x7f060002;
         public static final int info=0x7f060008;
-        public static final int info_click=0x7f060009;
         public static final int situation=0x7f060006;
         public static final int warten=0x7f060007;
         public static final int was=0x7f060004;

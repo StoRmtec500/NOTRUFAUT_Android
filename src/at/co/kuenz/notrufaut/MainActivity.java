@@ -1,12 +1,33 @@
 package at.co.kuenz.notrufaut;
 
+import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 
 public class MainActivity extends Activity {
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		
+		
+		Button btnInfo = (Button)findViewById(R.id.action_settings);
+		btnInfo.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent in = new Intent
+			(
+					MainActivity.this, InfoActivity.class
+			);
+			startActivity(in);
+			}
+		});	
+	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -14,27 +35,6 @@ public class MainActivity extends Activity {
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
-	
-	public boolean onOptionsItemSelected(MenuItem item)
-	{
-		switch (item.getItemId()) {
-		case R.id.info_click:
-			View v = null;
-			Test(v);
-			break;
 
-		default:
-			break;
-		}
-		return true;
-	}
-	
-	public void Test(View v) {
-		Intent in = new Intent
-	(
-			MainActivity.this, InfoActivity.class
-	);
-	startActivity(in);
-	}
 
 }
