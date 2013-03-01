@@ -4,10 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuItem;
-<<<<<<< HEAD
 import android.view.View;
-=======
->>>>>>> old
 
 public class MainActivity extends Activity {
 
@@ -18,7 +15,6 @@ public class MainActivity extends Activity {
 		return true;
 	}
 	
-<<<<<<< HEAD
 	public boolean onOptionsItemSelected(MenuItem item)
 	{
 		switch (item.getItemId()) {
@@ -39,23 +35,6 @@ public class MainActivity extends Activity {
 			MainActivity.this, InfoActivity.class
 	);
 	startActivity(in);
-=======
-	public boolean onOptionsItemSelected(MenuItem item){
-		switch (item.getItemId()) {
-		case R.id.action_settings:
-			info();
-			return true;
-		default:
-			return super.onOptionsItemSelected(item);
-		}
 	}
 
-	private void info() {
-		// TODO Auto-generated method stub
-		setContentView(R.layout.activity_info);
->>>>>>> old
-	}
-
-	
-	
 }

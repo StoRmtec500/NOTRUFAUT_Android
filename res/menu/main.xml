@@ -5,11 +5,5 @@
         android:orderInCategory="100"
         android:showAsAction="ifRoom"
         android:title="@string/action_settings"
-<<<<<<< HEAD
         android:icon="@drawable/ic_info"/>
-=======
-        android:icon="@drawable/ic_action_info"
-        android:onClick="btnInfoClick"/>
-
->>>>>>> old
 </menu>
