@@ -52,4 +52,57 @@
         android:text="@string/warten"
         android:textColor="@color/bar_red" />
 
+    <Button
+        android:id="@+id/btnPolizei"
+        style="@style/ButtonText"
+        android:typeface="sans"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/layout_16dp"
+        android:layout_marginRight="@dimen/layout_16dp"
+        android:layout_marginTop="@dimen/layout_16dp"
+        android:background="@drawable/button"
+        android:clickable="false"
+        android:drawableLeft="@drawable/btn_polizei"
+        android:duplicateParentState="false"
+        android:longClickable="false"
+        android:onClick="btnPolizeiClick"
+        android:text="@string/btnPolizei" />
+
+    <Button
+        android:id="@+id/btnFeuerwehr"
+        style="@style/ButtonText"
+        android:typeface="sans"
+        android:background="@drawable/button"
+        android:layout_width="256dp"
+        android:drawableLeft="@drawable/btn_feuerwehr"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/layout_16dp"
+        android:layout_marginRight="@dimen/layout_16dp"
+        android:layout_marginTop="@dimen/layout_16dp"
+        android:onClick="btnFeuerwehrClick"
+        android:text="@string/btnFeurwehr" />
+
+    <Button
+        android:id="@+id/btnRettung"
+        style="@style/ButtonText"
+        android:layout_width="255dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/layout_16dp"
+        android:layout_marginRight="@dimen/layout_16dp"
+        android:layout_marginTop="@dimen/layout_16dp"
+        android:background="@drawable/button"
+        android:drawableLeft="@drawable/btn_rettung"
+        android:onClick="btnRettungClick"
+        android:text="@string/btnRettung"
+        android:typeface="sans" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/layout_20dp"
+        android:text="@string/waehlen"
+        android:textColor="@color/grau" />
+
 </LinearLayout>

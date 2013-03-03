@@ -10,9 +10,18 @@ package at.co.kuenz.notrufaut;
 public final class R {
     public static final class attr {
     }
+    public static final class bool {
+        /** Enable automatic activity tracking
+         */
+        public static final int ga_autoActivityTracking=0x7f050000;
+        /** Enable automatic exception tracking
+         */
+        public static final int ga_reportUncaughtExceptions=0x7f050001;
+    }
     public static final class color {
-        public static final int bar_red=0x7f040000;
-        public static final int white=0x7f040001;
+        public static final int bar_red=0x7f060000;
+        public static final int grau=0x7f060002;
+        public static final int white=0x7f060001;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
@@ -21,47 +30,87 @@ public final class R {
          screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
     
          */
-        public static final int activity_horizontal_margin=0x7f050000;
-        public static final int activity_vertical_margin=0x7f050001;
-        public static final int main8dp=0x7f050002;
+        public static final int activity_horizontal_margin=0x7f070000;
+        public static final int activity_vertical_margin=0x7f070001;
+        public static final int layout_16dp=0x7f070003;
+        public static final int layout_20dp=0x7f070006;
+        public static final int layout_30dp=0x7f07000f;
+        public static final int layout_32dp=0x7f070004;
+        public static final int layout_45dp=0x7f070005;
+        public static final int layout_48dp=0x7f07000b;
+        public static final int layout_4dp=0x7f07000a;
+        public static final int layout_53dp=0x7f07000c;
+        public static final int layout_5dp=0x7f070009;
+        public static final int layout_60dp=0x7f07000d;
+        public static final int layout_6dp=0x7f070008;
+        public static final int layout_70dp=0x7f07000e;
+        public static final int layout_8dp=0x7f070007;
+        public static final int main8dp=0x7f070002;
     }
     public static final class drawable {
-        public static final int ic_info=0x7f020000;
-        public static final int ic_launcher=0x7f020001;
-        public static final int ic_launcher1=0x7f020002;
-        public static final int ic_notruf=0x7f020003;
-        public static final int umrandung=0x7f020004;
+        public static final int background=0x7f020000;
+        public static final int btn_feuerwehr=0x7f020001;
+        public static final int btn_polizei=0x7f020002;
+        public static final int btn_rettung=0x7f020003;
+        public static final int btndonate=0x7f020004;
+        public static final int button=0x7f020005;
+        public static final int button_style=0x7f020006;
+        public static final int ic_info=0x7f020007;
+        public static final int ic_launcher=0x7f020008;
+        public static final int ic_launcher1=0x7f020009;
+        public static final int ic_notruf=0x7f02000a;
+        public static final int umrandung=0x7f02000b;
     }
     public static final class id {
-        public static final int LinearLayout1=0x7f090001;
-        public static final int info_click=0x7f090006;
-        public static final int textView1=0x7f090000;
-        public static final int textView2=0x7f090002;
-        public static final int textView3=0x7f090003;
-        public static final int textView4=0x7f090004;
-        public static final int textView5=0x7f090005;
+        public static final int LinearLayout1=0x7f0a0007;
+        public static final int btnFeuerwehr=0x7f0a0009;
+        public static final int btnPolizei=0x7f0a0008;
+        public static final int btnRettung=0x7f0a000a;
+        public static final int button1=0x7f0a0004;
+        public static final int info_click=0x7f0a000b;
+        public static final int textView1=0x7f0a0000;
+        public static final int textView2=0x7f0a0001;
+        public static final int textView3=0x7f0a0002;
+        public static final int textView4=0x7f0a0003;
+        public static final int textView5=0x7f0a0005;
+        public static final int textView6=0x7f0a0006;
     }
     public static final class layout {
         public static final int activity_info=0x7f030000;
         public static final int activity_main=0x7f030001;
     }
     public static final class menu {
-        public static final int main=0x7f080000;
+        public static final int main=0x7f090000;
     }
     public static final class string {
-        public static final int action_settings=0x7f060001;
-        public static final int app_name=0x7f060000;
-        public static final int hello_world=0x7f060002;
-        public static final int info=0x7f060008;
-        public static final int situation=0x7f060006;
-        public static final int warten=0x7f060007;
-        public static final int was=0x7f060004;
-        public static final int wieviel=0x7f060005;
-        public static final int wo=0x7f060003;
+        public static final int action_settings=0x7f040002;
+        public static final int app_name=0x7f040001;
+        public static final int backgroundImageView=0x7f04000e;
+        public static final int bewerten=0x7f04000f;
+        public static final int bewertenOnClick=0x7f040015;
+        public static final int btnFeurwehr=0x7f04000b;
+        public static final int btnPolizei=0x7f04000a;
+        public static final int btnRettung=0x7f04000c;
+        public static final int copyright=0x7f040013;
+        public static final int empfehlen=0x7f040010;
+        public static final int feedback=0x7f040011;
+        /** Replace placeholder ID with your tracking ID
+         */
+        public static final int ga_trackingId=0x7f040000;
+        public static final int hello_world=0x7f040003;
+        public static final int info=0x7f040009;
+        public static final int situation=0x7f040007;
+        public static final int unterstuetzen=0x7f040012;
+        public static final int version=0x7f040014;
+        public static final int waehlen=0x7f04000d;
+        public static final int warten=0x7f040008;
+        public static final int was=0x7f040005;
+        public static final int wieviel=0x7f040006;
+        public static final int wo=0x7f040004;
     }
     public static final class style {
-        public static final int ActionBar=0x7f070004;
-        public static final int ActionBar_Text=0x7f070005;
+        public static final int ActionBar=0x7f080005;
+        public static final int ActionBar_Text=0x7f080006;
         /** 
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
@@ -82,12 +131,18 @@ public final class R {
         res/values-v11/styles.xml on API 14+ devices.
     
          */
-        public static final int AppBaseTheme=0x7f070000;
+        public static final int AppBaseTheme=0x7f080001;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f070001;
-        public static final int padding_16dp=0x7f070003;
-        public static final int styleName=0x7f070002;
+        public static final int AppTheme=0x7f080002;
+        /**  <item name="android:shadowColor">#ffffff</item> 
+    <item name="android:shadowDx">1</item>
+    <item name="android:shadowDy">1</item>
+    <item name="android:shadowRadius">2</item> 
+         */
+        public static final int ButtonText=0x7f080000;
+        public static final int padding_16dp=0x7f080004;
+        public static final int styleName=0x7f080003;
     }
 }
