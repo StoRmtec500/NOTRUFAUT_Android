@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
     style="@style/padding_16dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -53,20 +54,30 @@
         android:textColor="@color/grau"
         android:textSize="@dimen/layout_16dp" />
 
+
     <Button
         android:id="@+id/button1"
         android:layout_width="98dp"
         android:layout_height="26dp"
         android:layout_gravity="center"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="55dp"
         android:background="@drawable/btndonate"
         android:onClick="spendenClick"
         android:clickable="true" />
+    
+                 <com.google.ads.AdView
+                     android:id="@+id/adView"
+                     android:layout_width="320dp"
+                     android:layout_height="50dp"
+                     android:layout_marginTop="5dp"
+                     ads:adSize="BANNER"
+                     ads:adUnitId="a15134b27c3c5e3"
+                     ads:loadAdOnCreate="true" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="43dp" >
+        android:layout_marginTop="15dp">
 
         <TextView
             android:id="@+id/textView5"
@@ -87,4 +98,11 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/info_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+ </LinearLayout>
+ 
 </LinearLayout>

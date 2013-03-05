@@ -9,10 +9,12 @@ import android.view.View;
 import android.widget.Toast;
 import android.app.Activity;
 import android.content.Intent;
+
+
 //import android.view.Menu;
 
 public class InfoActivity extends Activity {
-	
+
 	@Override
 	  public void onStart() {
 	    super.onStart();
@@ -30,7 +32,7 @@ public class InfoActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_info);
+		setContentView(R.layout.activity_info);	
 	}
 	
 	
