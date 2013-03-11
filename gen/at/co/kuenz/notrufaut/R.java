@@ -64,12 +64,13 @@ public final class R {
     public static final class id {
         public static final int LinearLayout1=0x7f0a0009;
         public static final int adView=0x7f0a0005;
-        public static final int btnFeuerwehr=0x7f0a000b;
-        public static final int btnPolizei=0x7f0a000a;
-        public static final int btnRettung=0x7f0a000c;
+        public static final int btnFeuerwehr=0x7f0a000c;
+        public static final int btnPolizei=0x7f0a000b;
+        public static final int btnRettung=0x7f0a000d;
         public static final int button1=0x7f0a0004;
-        public static final int info_click=0x7f0a000d;
+        public static final int info_click=0x7f0a000e;
         public static final int info_layout=0x7f0a0008;
+        public static final int location=0x7f0a000a;
         public static final int textView1=0x7f0a0000;
         public static final int textView2=0x7f0a0001;
         public static final int textView3=0x7f0a0002;
@@ -86,6 +87,7 @@ public final class R {
     }
     public static final class string {
         public static final int action_settings=0x7f040002;
+        public static final int aktuellePosition=0x7f040016;
         public static final int app_name=0x7f040001;
         public static final int backgroundImageView=0x7f04000e;
         public static final int bewerten=0x7f04000f;

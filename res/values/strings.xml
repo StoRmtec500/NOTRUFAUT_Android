@@ -35,5 +35,6 @@
     <string name="copyright">© 2013 by Martin Kuenz</string>
     <string name="version">Version: 1.0</string>
     <string name="bewertenOnClick">bewertenOnClick</string>
+    <string name="aktuellePosition">aktueller Standort:</string>
     
 </resources>
