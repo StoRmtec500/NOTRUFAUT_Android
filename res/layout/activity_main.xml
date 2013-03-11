@@ -17,7 +17,7 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
+        android:layout_marginBottom="2dp"
         android:layout_marginTop="0dp"
         android:text="@string/wo"
         android:textColor="@color/bar_red" />
@@ -64,7 +64,8 @@
         android:focusableInTouchMode="false"
         android:gravity="center_vertical|center_horizontal"
         android:inputType="textPersonName"
-        android:text="@string/aktuellePosition" >
+        android:text="@string/aktuellePosition"
+        android:textColor="@color/blau" >
 
         <requestFocus />
 
@@ -130,12 +131,5 @@
             android:textColor="@color/grau" />
 
     </LinearLayout>
-
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="-30dp"
-        android:text="@string/feedback" />
 
 </LinearLayout>

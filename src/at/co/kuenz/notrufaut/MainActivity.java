@@ -16,6 +16,9 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
+import android.provider.Settings;
+
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -30,7 +33,8 @@ import at.co.kuenz.notrufaut.MyLocationListener;
 public class MainActivity extends Activity {
 	
 	public EditText textEdit;
-
+	final Context context = this;
+	
 	@Override
 	  public void onStart() {
 	    super.onStart();
@@ -44,66 +48,73 @@ public class MainActivity extends Activity {
 	    // The rest of your onStop() code.
 	    EasyTracker.getInstance().activityStop(this); // Add this method.
 	  }
-	
+	  
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 	
+		new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+               /*final Intent mainIntent = new Intent(MainActivity.this, MainActivity.class);
+                MainActivity.this.startActivity(mainIntent);
+                MainActivity.this.finish();*/
+            	getAddress();
+            	
+        		LocationManager mlocManager=null;
+        		LocationListener mlocListener;
+        		mlocManager = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
+        		mlocListener = new MyLocationListener();
+        		mlocManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000, 0, mlocListener);
+            }
+        }, 5000);
+		
 		Button btnPolizei = (Button)findViewById(R.id.btnPolizei);
 		Button btnFeuerwehr = (Button)findViewById(R.id.btnFeuerwehr);
-		Button btnRettung = (Button)findViewById(R.id.btnRettung);		
-		Button btnFeedback = (Button)findViewById(R.id.button1);
+		Button btnRettung = (Button)findViewById(R.id.btnRettung);
 		
 		textEdit = (EditText)findViewById(R.id.location);
 		
-		btnFeedback.callOnClick();
+		LocationManager mlocManager=null;
+		LocationListener mlocListener;
+		mlocManager = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
+		mlocListener = new MyLocationListener();
+		mlocManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000, 0, mlocListener);
 		
-		
-		btnFeedback.setOnClickListener(new View.OnClickListener() {
-			public void onClick(View v) {
+		if (mlocManager.isProviderEnabled(LocationManager.GPS_PROVIDER) == false){
+			/*Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+		    startActivity(intent);*/
+			Builder alertDialog = new AlertDialog.Builder(MainActivity.this);
+			alertDialog.setTitle("GPS ist nicht aktiviert!");
+			alertDialog.setMessage("Wollen Sie GPS aktivieren?");
+			alertDialog.setPositiveButton("Ja", new DialogInterface.OnClickListener() {
 				
-				Builder alertDialog = new AlertDialog.Builder(MainActivity.this);
-
-				textEdit.setText("");
-				
-				getAddress();
-				
-				LocationManager mlocManager=null;
-				LocationListener mlocListener;
-				mlocManager = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
-				mlocListener = new MyLocationListener();
-				mlocManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, mlocListener);
-				
-			/*	if (mlocManager.isProviderEnabled(LocationManager.GPS_PROVIDER))
-					if(MyLocationListener.latitude>0)
-				{
-					textEdit.append("Lat:"+MyLocationListener.latitude);
-					textEdit.append("Long:"+MyLocationListener.longitude);
+				@Override
+				public void onClick(DialogInterface dialog, int which) {
+					// TODO Auto-generated method stub
+					Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+				    startActivity(intent);
 				}
-				else
-				{
-					alertDialog.setTitle("Wait");
-					alertDialog.setMessage("GPS in progress");
-					alertDialog.setPositiveButton("OK", null);
-					alertDialog.show();
+			});
+			alertDialog.setNegativeButton("Nein", new DialogInterface.OnClickListener() {
+				
+				@Override
+				public void onClick(DialogInterface dialog, int which) {
+					// TODO Auto-generated method stub
+					dialog.cancel();
 				}
-				else
-				{
-					alertDialog.setTitle("Problem");
-					alertDialog.setMessage("GPS nicht aktiviert");
-					alertDialog.setPositiveButton("OK",	null);
-					alertDialog.show();
-				}*/
-			}
-		});
+			});
+			alertDialog.show();
+		}
 		
 	btnPolizei.setOnClickListener(new OnClickListener() {
 		public void onClick(View v) {
 			Builder alertDialog = new AlertDialog.Builder(MainActivity.this);
 			alertDialog.setTitle("Polizei");
-			alertDialog.setMessage("Wirklich 133 w‰hlen?");
-			alertDialog.setPositiveButton("JA 133 w‰hlen", new DialogInterface.OnClickListener() {	
+			alertDialog.setMessage("Wirklich 133 wählen?");
+			alertDialog.setPositiveButton("JA 133 wählen", new DialogInterface.OnClickListener() {	
 			//	@Override
 				public void onClick(final DialogInterface dialog, final int which) {
 					final Intent callIntent = new Intent(Intent.ACTION_CALL);
@@ -128,8 +139,8 @@ public class MainActivity extends Activity {
 		public void onClick(View v) {
 			Builder alertDialog = new AlertDialog.Builder(MainActivity.this);
 			alertDialog.setTitle("Feuerwehr");
-			alertDialog.setMessage("Wirklich 122 w‰hlen?");
-			alertDialog.setPositiveButton("JA 122 w‰hlen", new DialogInterface.OnClickListener() {	
+			alertDialog.setMessage("Wirklich 122 wählen?");
+			alertDialog.setPositiveButton("JA 122 wählen", new DialogInterface.OnClickListener() {	
 			//	@Override
 				public void onClick(final DialogInterface dialog, final int which) {
 					final Intent callIntent = new Intent(Intent.ACTION_CALL);
@@ -154,8 +165,8 @@ public class MainActivity extends Activity {
 		public void onClick(View v) {
 			Builder alertDialog = new AlertDialog.Builder(MainActivity.this);
 			alertDialog.setTitle("Rettung");
-			alertDialog.setMessage("Wirklich 144 w‰hlen?");
-			alertDialog.setPositiveButton("JA 144 w‰hlen", new DialogInterface.OnClickListener() {	
+			alertDialog.setMessage("Wirklich 144 wählen?");
+			alertDialog.setPositiveButton("JA 144 wählen", new DialogInterface.OnClickListener() {	
 			//	@Override
 				public void onClick(final DialogInterface dialog, final int which) {
 					final Intent callIntent = new Intent(Intent.ACTION_CALL);
@@ -219,7 +230,9 @@ public class MainActivity extends Activity {
 	                    for (int x = 0; x <= maxIndex; x++ ){
 	                       // result.append(address.getAddressLine(x));
 	                       // result.append(", ");
-	                    }               
+	                    }   
+	                    
+	            		textEdit.setText("");
 	                    result.append(address.getPostalCode());
 	                    result.append(" ");
 	                    result.append(address.getLocality());
