@@ -4,7 +4,6 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.os.Bundle;
 
-
 public class MyLocationListener implements LocationListener {
 	
 	public static double latitude;
@@ -36,4 +35,6 @@ public class MyLocationListener implements LocationListener {
 		
 	}
 
+	
+	
 }

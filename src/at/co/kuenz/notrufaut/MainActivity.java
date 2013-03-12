@@ -19,6 +19,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.provider.Settings;
 
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -32,6 +33,7 @@ import at.co.kuenz.notrufaut.MyLocationListener;
 
 public class MainActivity extends Activity {
 	
+	private static final String LOG_TAG = "debugger";
 	public EditText textEdit;
 	final Context context = this;
 	
@@ -58,11 +60,10 @@ public class MainActivity extends Activity {
 		new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-               /*final Intent mainIntent = new Intent(MainActivity.this, MainActivity.class);
+             /*  final Intent mainIntent = new Intent(MainActivity.this, MainActivity.class);
                 MainActivity.this.startActivity(mainIntent);
-                MainActivity.this.finish();*/
+                MainActivity.this.finish();  */ 
             	getAddress();
-            	
         		LocationManager mlocManager=null;
         		LocationListener mlocListener;
         		mlocManager = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
@@ -77,6 +78,7 @@ public class MainActivity extends Activity {
 		
 		textEdit = (EditText)findViewById(R.id.location);
 		
+	
 		LocationManager mlocManager=null;
 		LocationListener mlocListener;
 		mlocManager = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
@@ -217,21 +219,25 @@ public class MainActivity extends Activity {
 		startActivity(in);
 	}
 	
-	  void getAddress(){
+	public void getAddress(){
 	        try{
 	            Geocoder gcd = new Geocoder(this, Locale.getDefault());
-	            List<Address> addresses = 
-	                gcd.getFromLocation(MyLocationListener.latitude, MyLocationListener.longitude,1);
+	            List<Address> addresses = gcd.getFromLocation(MyLocationListener.latitude, MyLocationListener.longitude,1);
 	            if (addresses.size() > 0) {
 	                StringBuilder result = new StringBuilder();
 	                for(int i = 0; i < addresses.size(); i++){
 	                    Address address =  addresses.get(i);
-	                    int maxIndex = address.getMaxAddressLineIndex();
-	                    for (int x = 0; x <= maxIndex; x++ ){
-	                       // result.append(address.getAddressLine(x));
-	                       // result.append(", ");
-	                    }   
-	                    
+	                  //  int maxIndex = address.getMaxAddressLineIndex();
+	                   /* for (int x = 0; x <= maxIndex; x++ ){
+	                    	textEdit.setText("");
+		                    result.append(address.getPostalCode());
+		                    result.append(" ");
+		                    result.append(address.getLocality());
+		                    result.append(", ");
+		                    result.append(address.getThoroughfare());
+		                    result.append(" ");
+		                    result.append(address.getSubThoroughfare());
+	                    }  */
 	            		textEdit.setText("");
 	                    result.append(address.getPostalCode());
 	                    result.append(" ");
@@ -240,8 +246,10 @@ public class MainActivity extends Activity {
 	                    result.append(address.getThoroughfare());
 	                    result.append(" ");
 	                    result.append(address.getSubThoroughfare());
+	                    Log.i(LOG_TAG, "Test");
+	                    textEdit.setText(result.toString());
 	                }
-	                textEdit.setText(result.toString());
+	              //  textEdit.setText(result.toString());
 	            }
 	        }
 	        catch(IOException ex){

@@ -77,7 +77,7 @@ public class InfoActivity extends Activity {
 	
 	public void spendenClick(View v){
 	Intent intent = new Intent(Intent.ACTION_VIEW);
-	intent.setData(Uri.parse("http://cms.kuenz.co.at/fileadmin/templates/paypal/paypal_notruf.html"));
+	intent.setData(Uri.parse("https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QGR6PTYFLAPKC"));
 	startActivity(intent);
 	};
 }
